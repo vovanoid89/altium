@@ -13,7 +13,7 @@ public class BaseTest extends ConsiseApi {
 
 
     public BaseTest() {
-        System.setProperty("webdriver.chrome.driver", "D:\\eclipse-workspace\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "..\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         // page = new GooglePage(driver);
