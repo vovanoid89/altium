@@ -14,12 +14,12 @@ import java.util.concurrent.TimeUnit;
 public class ServerLoginTest {
     @BeforeClass
     public static void setup() {
-        System.setProperty("webdriver.chrome.driver", "/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/chromedriver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://ukrpc062.altium.biz:9780");
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.get("http://ukrpc062.altium.biz:9780/Account/Login?ReturnUrl=%2f");
     }
     @Test
     public void login() {
@@ -27,7 +27,7 @@ public class ServerLoginTest {
         WebElement loginField = driver.findElement(By.id("UserName"));
         loginField.sendKeys("t1");
 
-        WebElement passwordField = driver.findElement(By.id("t1"));
+        WebElement passwordField = driver.findElement(By.id("Password"));
         passwordField.sendKeys("t1");
 
         WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"formLogin\"]/div[5]/div/button"));
