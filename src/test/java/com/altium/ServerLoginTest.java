@@ -43,12 +43,12 @@ public class ServerLoginTest {
     @AfterClass
     public static void end(){
 
-        WebElement logMenu = driver.findElement(By.className("ico"));
-       logMenu.click();
+        WebElement logMenu = driver.findElement(By.cssSelector(".avatar > a:nth-child(1)"));
+        logMenu.click();
 
-       WebElement logOut = driver.findElement(By.className("menu-item"));
-       logOut.click();
-       driver.quit();
+        WebElement logOut = driver.findElement(By.className("menu-item"));
+        logOut.click();
+        driver.quit();
     }
 }
 
