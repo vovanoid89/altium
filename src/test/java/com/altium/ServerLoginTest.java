@@ -12,10 +12,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class ServerLoginTest {
+
+    static WebDriver driver;
+
     @BeforeClass
     public static void setup() {
-        System.setProperty("webdriver.chrome.driver", "/chromedriver/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        driver = new ChromeDriver();
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -23,7 +26,7 @@ public class ServerLoginTest {
     }
     @Test
     public void login() {
-        WebDriver driver = new ChromeDriver();
+
         WebElement loginField = driver.findElement(By.id("UserName"));
         loginField.sendKeys("t1");
 
@@ -39,8 +42,8 @@ public class ServerLoginTest {
     }
     @AfterClass
     public static void end(){
-        WebDriver driver = new ChromeDriver();
-       WebElement logMenu = driver.findElement(By.className("ico"));
+
+        WebElement logMenu = driver.findElement(By.className("ico"));
        logMenu.click();
 
        WebElement logOut = driver.findElement(By.className("menu-item"));
