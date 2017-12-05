@@ -28,8 +28,10 @@ public class LoginPage extends BasePage {
     @FindBy(css = ".btn.btn-default.btn-primary-vault")
     public WebElement loginBtn;
 
+    @FindBy(id = "errorMessage")
+    public WebElement multipleLogin;
 
-
-
+    @FindBy(xpath = "//*[@id=\"extraLoginParametersModal\"]/div[2]/div/div[2]/div[2]/a[2]")
+    public WebElement startNewSession;
 
 }

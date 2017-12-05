@@ -1,6 +1,5 @@
 package afs.uitests;
 
-import afs.uitests.PagesModel.LoginPage;
 import org.junit.AfterClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,8 +18,9 @@ public class BaseTest extends ConsiseApi {
         // page = new GooglePage(driver);
     }
 
-    public void assertThat(ExpectedCondition<Boolean> condition) {
+    public boolean assertThat(ExpectedCondition<Boolean> condition) {
         (new WebDriverWait(getWebDriver(), 4)).until(condition);
+        return false;
     }
 
     @Override
